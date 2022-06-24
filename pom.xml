@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>es.us.isa.idl</groupId>
-	<artifactId>idl-validation</artifactId>
+	<artifactId>IDL-Validation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>idl-validation</name>
+	<name>IDL-Validation</name>
 	<description>This project is used to validate IDL in the OAS</description>
 	<properties>
 		<java.version>1.8</java.version>
