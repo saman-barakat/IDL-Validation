@@ -3,9 +3,11 @@ package es.us.isa.idl.idlvalidation.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 public class RequestValidationResponse {
     private Boolean valid;

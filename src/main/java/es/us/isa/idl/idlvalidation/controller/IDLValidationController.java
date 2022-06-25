@@ -1,5 +1,6 @@
 package es.us.isa.idl.idlvalidation.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import es.us.isa.idl.idlvalidation.model.RequestValidationResponse;
@@ -23,9 +24,7 @@ public class IDLValidationController {
     private static final String SPEC_URL = "https://raw.githubusercontent.com/saman-barakat/IDLAnalyzer/master/src/test/resources/OAS_test_suite.yaml";
     private static final String OPERATION_PATH = "operationPath";
     private static final String OPERATION_TYPE = "operationType";
-
     private static final String PARAMETERS = "parameters";
-
 
     @GetMapping("/validation")
     public ResponseEntity<RequestValidationResponse> isValidRequestGet(
@@ -35,14 +34,14 @@ public class IDLValidationController {
             throws IDLException {
 
         try {
-
             ObjectMapper mapper = new ObjectMapper();
 
             Map<String, String> request = mapper.readValue(parameters, new TypeReference<Map<String, String>>() {
             });
 
             Analyzer analyzer = new OASAnalyzer("oas", SPEC_URL, operationPath, operationType, false);
-            Boolean valid = analyzer.isValidRequest(request);
+
+            boolean valid = analyzer.isValidRequest(request);
 
             if (!valid)
                 throw new IDLException("The Request is invalid!");
@@ -50,12 +49,12 @@ public class IDLValidationController {
             RequestValidationResponse response = new RequestValidationResponse();
             response.setValid(true);
             response.setMessage("The Request is valid!");
+            log.info(response.getMessage());
 
             return ResponseEntity.ok(response);
 
-        } catch (Exception e) {
+        } catch (JsonProcessingException e) {
             throw new IDLException(e.getMessage());
         }
-
     }
 }

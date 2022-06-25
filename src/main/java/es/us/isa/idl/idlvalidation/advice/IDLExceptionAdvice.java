@@ -13,10 +13,9 @@ public class IDLExceptionAdvice {
 
     @ExceptionHandler(IDLException.class)
     public ResponseEntity<RequestValidationResponse> handleIDLException(IDLException e) {
+
         log.info(e.getMessage());
-        RequestValidationResponse response = new RequestValidationResponse();
-        response.setValid(false);
-        response.setMessage(e.getMessage());
-        return ResponseEntity.badRequest().body(response);
+
+        return ResponseEntity.badRequest().body(new RequestValidationResponse(false,e.getMessage()));
     }
 }
