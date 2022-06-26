@@ -21,7 +21,7 @@ import java.util.Map;
 @RequestMapping("/api")
 public class IDLValidationController {
 
-    private static final String SPEC_URL = "https://raw.githubusercontent.com/saman-barakat/IDLAnalyzer/master/src/test/resources/OAS_test_suite.yaml";
+    private static final String SPEC_URL = "./src/test/resources/OASFile/openapi.yaml";
     private static final String OPERATION_PATH = "operationPath";
     private static final String OPERATION_TYPE = "operationType";
     private static final String PARAMETERS = "parameters";
