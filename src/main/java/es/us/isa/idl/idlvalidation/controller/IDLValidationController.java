@@ -15,10 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @Log
 @RestController
@@ -60,8 +57,6 @@ public class IDLValidationController {
 
         } catch (JsonProcessingException e) {
             throw new IDLException(e.getMessage());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        } 
     }
 }
