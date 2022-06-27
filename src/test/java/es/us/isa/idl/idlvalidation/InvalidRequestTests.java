@@ -22,7 +22,7 @@ import java.util.Map;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @AutoConfigureMockMvc
-class IdlValidationInvalidRequestTests {
+class InvalidRequestTests {
     private static final String SPEC_URL = "./src/test/resources/OASFile/openapi.yaml";
     private static final String OPERATION_PATH = "operationPath";
     private static final String OPERATION_TYPE = "operationType";
@@ -34,7 +34,7 @@ class IdlValidationInvalidRequestTests {
 
     // Testing GetSuccessful
     @Test
-    void validRequestGetSuccessfulNoParams() throws Exception {
+    void NoParams() throws Exception {
         String operationPath = "/noParams";
         String operationType = "get";
 
@@ -56,7 +56,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulOneParamBoolean() throws Exception {
+    void OneParamBoolean() throws Exception {
         String operationPath = "/oneParamBoolean";
         String operationType = "get";
 
@@ -78,7 +78,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulOneParamString() throws Exception {
+    void OneParamString() throws Exception {
         String operationPath = "/oneParamString";
         String operationType = "get";
 
@@ -100,7 +100,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulOneParamInt() throws Exception {
+    void OneParamInt() throws Exception {
         String operationPath = "/oneParamInt";
         String operationType = "get";
 
@@ -122,7 +122,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulNOneParamEnumString() throws Exception {
+    void NOneParamEnumString() throws Exception {
         String operationPath = "/oneParamEnumString";
         String operationType = "get";
 
@@ -144,7 +144,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulOneParamEnumInt() throws Exception {
+    void OneParamEnumInt() throws Exception {
         String operationPath = "/oneParamEnumInt";
         String operationType = "get";
 
@@ -166,7 +166,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulOneDependencyRequires() throws Exception {
+    void OneDependencyRequires() throws Exception {
         String operationPath = "/oneDependencyRequires";
         String operationType = "get";
 
@@ -188,7 +188,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulOneDependencyOr() throws Exception {
+    void OneDependencyOr() throws Exception {
         String operationPath = "/oneDependencyOr";
         String operationType = "get";
 
@@ -210,7 +210,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulOneDependencyOnlyOne() throws Exception {
+    void OneDependencyOnlyOne() throws Exception {
         String operationPath = "/oneDependencyOnlyOne";
         String operationType = "get";
 
@@ -232,7 +232,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulOneDependencyAllOrNone() throws Exception {
+    void OneDependencyAllOrNone() throws Exception {
         String operationPath = "/oneDependencyAllOrNone";
         String operationType = "get";
 
@@ -254,7 +254,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulOneDependencyZeroOrOne() throws Exception {
+    void OneDependencyZeroOrOne() throws Exception {
         String operationPath = "/oneDependencyZeroOrOne";
         String operationType = "get";
 
@@ -276,7 +276,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulOneDependencyArithRel() throws Exception {
+    void OneDependencyArithRel() throws Exception {
         String operationPath = "/oneDependencyArithRel";
         String operationType = "get";
 
@@ -298,7 +298,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulOneDependencyComplex() throws Exception {
+    void OneDependencyComplex() throws Exception {
         String operationPath = "/oneDependencyComplex";
         String operationType = "get";
 
@@ -320,7 +320,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulOneDependencyEnumParams() throws Exception {
+    void OneDependencyEnumParams() throws Exception {
         String operationPath = "/oneDependencyEnumParams";
         String operationType = "get";
 
@@ -342,7 +342,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulOneDependencyArithRelEnumParams() throws Exception {
+    void OneDependencyArithRelEnumParams() throws Exception {
         String operationPath = "/oneDependencyArithRelEnumParams";
         String operationType = "get";
 
@@ -364,7 +364,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulOneDependencyComplexEnumParams() throws Exception {
+    void OneDependencyComplexEnumParams() throws Exception {
         String operationPath = "/oneDependencyComplexEnumParams";
         String operationType = "get";
 
@@ -386,7 +386,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulCombinatorial1() throws Exception {
+    void Combinatorial1() throws Exception {
         String operationPath = "/combinatorial1";
         String operationType = "get";
 
@@ -408,7 +408,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulCombinatorial2() throws Exception {
+    void Combinatorial2() throws Exception {
         String operationPath = "/combinatorial2";
         String operationType = "get";
 
@@ -430,7 +430,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulCombinatorial3() throws Exception {
+    void Combinatorial3() throws Exception {
         String operationPath = "/combinatorial3";
         String operationType = "get";
 
@@ -452,7 +452,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulCombinatorial4() throws Exception {
+    void Combinatorial4() throws Exception {
         String operationPath = "/combinatorial4";
         String operationType = "get";
 
@@ -474,7 +474,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulCombinatorial5() throws Exception {
+    void Combinatorial5() throws Exception {
         String operationPath = "/combinatorial5";
         String operationType = "get";
 
@@ -496,7 +496,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulCombinatorial6() throws Exception {
+    void Combinatorial6() throws Exception {
         String operationPath = "/combinatorial6";
         String operationType = "get";
 
@@ -518,7 +518,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulCombinatorial7() throws Exception {
+    void Combinatorial7() throws Exception {
         String operationPath = "/combinatorial7";
         String operationType = "get";
 
@@ -540,7 +540,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulCombinatorial8() throws Exception {
+    void Combinatorial8() throws Exception {
         String operationPath = "/combinatorial8";
         String operationType = "get";
 
@@ -562,7 +562,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulCombinatorial9() throws Exception {
+    void Combinatorial9() throws Exception {
         String operationPath = "/combinatorial9";
         String operationType = "get";
 
@@ -584,7 +584,7 @@ class IdlValidationInvalidRequestTests {
     }
 
     @Test
-    void validRequestGetSuccessfulCombinatorial10() throws Exception {
+    void Combinatorial10() throws Exception {
         String operationPath = "/combinatorial10";
         String operationType = "get";
 

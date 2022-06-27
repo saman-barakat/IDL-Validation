@@ -57,6 +57,6 @@ public class IDLValidationController {
 
         } catch (JsonProcessingException e) {
             throw new IDLException(e.getMessage());
-        } 
+        }
     }
 }
